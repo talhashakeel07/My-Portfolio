@@ -5,27 +5,63 @@ const Portfolio = () => {
     const element = document.getElementById(id);
     element.scrollIntoView({ behavior: 'smooth' });
   };
+const [isMenuOpen, setIsMenuOpen] = React.useState(false); 
+
 
   return (
     <div className="bg-gray-900 text-white min-h-screen font-sans">
       {/* --- Navbar --- */}
-      <nav className="fixed top-0 w-full bg-gray-800/90 backdrop-blur-md z-50 py-4 shadow-lg">
-        <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-400 cursor-pointer">MyPortfolio</h1>
-          <ul className="flex space-x-8">
-            {['Home', 'About', 'Service', 'Contact'].map((item) => (
-              <li key={item}>
-                <button 
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="hover:text-blue-400 transition-colors duration-300 font-medium"
-                >
-                  {item}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
+<nav className="fixed top-0 w-full bg-gray-800/90 backdrop-blur-md z-50 py-4 shadow-lg">
+  <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+    <h1 className="text-2xl font-bold text-blue-400 cursor-pointer">My Portfolio</h1>
+
+    {/* Desktop Menu: 'hidden md:flex' se ye mobile par chup jayega */}
+    <ul className="hidden md:flex space-x-8">
+      {['Home', 'About', 'Service', 'Contact'].map((item) => (
+        <li key={item}>
+          <button 
+            onClick={() => scrollToSection(item.toLowerCase())}
+            className="hover:text-blue-400 transition-colors duration-300 font-medium text-white"
+          >
+            {item}
+          </button>
+        </li>
+      ))}
+    </ul>
+
+    {/* Hamburger Icon: 'md:hidden' se ye sirf mobile par nazar aayega */}
+    <div className="md:hidden flex items-center">
+      <button 
+        onClick={() => setIsMenuOpen(!isMenuOpen)} 
+        className="text-blue-400 focus:outline-none"
+      >
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {isMenuOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+          )}
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  {/* Mobile Dropdown: Jab 'isMenuOpen' true hoga tabhi niche menu khulega */}
+  <div className={`md:hidden bg-gray-800 transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-64 border-t border-gray-700' : 'max-h-0'}`}>
+    <ul className="flex flex-col space-y-4 p-6">
+      {['Home', 'About', 'Service', 'Contact'].map((item) => (
+        <li key={item}>
+          <button 
+            onClick={() => scrollToSection(item.toLowerCase())}
+            className="block w-full text-left hover:text-blue-400 transition-colors duration-300 font-medium text-white"
+          >
+            {item}
+          </button>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
 
       {/* --- Home Section --- */}
 <section id="home" className="relative min-h-screen flex items-center justify-center px-6 md:px-20 bg-[#0B0F17] overflow-hidden pt-20">
