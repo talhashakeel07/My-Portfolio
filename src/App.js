@@ -236,13 +236,13 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
         {
           title: "Warehouse Inventory System",
           desc: "Full-scale inventory solution with stock alerts, supplier management, and real-time barcode tracking.",
-          tech: ["MERN Stack", "Redux", "Tailwind", "Node.js"],
+          tech: ["React", "Node.js", "MongoDB", "Tailwind"],
           image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000",
         },
         {
           title: "E-Commerce Platform",
           desc: "Modern digital storefront with secure Stripe payments, cart logic, and high-speed product filtering.",
-          tech: ["React", "Firebase", "Node.js", "Express"],
+          tech: ["React", "Node.js", "MongoDB", "Tailwind"],
           image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000",
         }
       ].map((project, index) => (
