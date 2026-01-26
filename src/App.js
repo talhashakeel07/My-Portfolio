@@ -80,8 +80,7 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Talha shakeel</span>
       </h2>
       <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
-        Hi, I'm a Front-End Web Developer with strong skills in HTML, CSS, JavaScript, 
-        and React.js. I love building clean, responsive, and user-friendly websites. 
+       I am a Full-Stack Web Developer specializing in the MERN Stack. I craft high-performance, scalable web applications by bridging the gap between elegant Frontend designs (React.js) and robust Backend systems (Node.js, Express, MongoDB). Let's turn your complex ideas into seamless digital realities.
       </p>
       
       <button 
@@ -250,7 +249,6 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
           key={index} 
           className="group bg-[#0B0F17]/50 rounded-[2rem] overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all duration-500 shadow-2xl flex flex-col h-full"
         >
-          {/* Project Image - Fixed Height & No Overlap */}
           <div className="relative h-56 sm:h-64 overflow-hidden border-b border-white/5">
             <img 
               src={project.image} 
