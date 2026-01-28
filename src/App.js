@@ -231,18 +231,21 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
           desc: "A streamlined LMS with student-teacher portals, attendance tracking, and real-time quiz modules.",
           tech: ["React", "Node.js", "MongoDB", "Express"],
           image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1000",
+          link: "https://education-management-system-blue.vercel.app/login"
         },
         {
           title: "Warehouse Inventory System",
           desc: "Full-scale inventory solution with stock alerts, supplier management, and real-time barcode tracking.",
           tech: ["React", "Node.js", "MongoDB", "Tailwind"],
           image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000",
+          link: "#"
         },
         {
           title: "E-Commerce Platform",
           desc: "Modern digital storefront with secure Stripe payments, cart logic, and high-speed product filtering.",
           tech: ["React", "Node.js", "MongoDB", "Tailwind"],
           image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000",
+          link: "#"
         }
       ].map((project, index) => (
         <div 
@@ -286,9 +289,20 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
                 Source Code <span>→</span>
               </button>
               
-              <button className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-extrabold rounded-xl transition-all shadow-lg active:scale-95">
-                Live Preview
-              </button>
+              {project.link !== "#" ? (
+                <a 
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-extrabold rounded-xl transition-all shadow-lg active:scale-95 inline-block text-center"
+                >
+                  Live Preview
+                </a>
+              ) : (
+                <button className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-extrabold rounded-xl transition-all shadow-lg active:scale-95">
+                  Live Preview
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -296,7 +310,6 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     </div>
   </div>
 </section>
-
 {/* --- Contact Section --- */}
 <section id="contact" className="py-24 bg-[#0a0d14] px-6 relative overflow-hidden">
   
