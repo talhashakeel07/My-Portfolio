@@ -238,14 +238,14 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
           desc: "Full-scale inventory solution with stock alerts, supplier management, and real-time barcode tracking.",
           tech: ["React", "Node.js", "MongoDB", "Tailwind"],
           image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000",
-          link: "" // Removed '#' to fix ESLint error
+          link: "" 
         },
         {
           title: "E-Commerce Platform",
           desc: "Modern digital storefront with secure Stripe payments, cart logic, and high-speed product filtering.",
           tech: ["React", "Node.js", "MongoDB", "Tailwind"],
           image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000",
-          link: "" // Removed '#' to fix ESLint error
+          link: "" 
         }
       ].map((project, index) => (
         <div 
@@ -285,11 +285,14 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
             {/* Action Buttons */}
             <div className="flex items-center justify-between pt-6 border-t border-white/5">
-              <button className="text-sm font-bold text-gray-400 hover:text-white transition-all flex items-center gap-1 group-hover:gap-2">
+              <button 
+                type="button" 
+                className="text-sm font-bold text-gray-400 hover:text-white transition-all flex items-center gap-1 group-hover:gap-2"
+              >
                 Source Code <span>→</span>
               </button>
               
-              {project.link ? (
+              {project.link && project.link.trim() !== "" ? (
                 <a 
                   href={project.link}
                   target="_blank"
