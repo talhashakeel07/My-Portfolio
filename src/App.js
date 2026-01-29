@@ -238,14 +238,14 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
           desc: "Full-scale inventory solution with stock alerts, supplier management, and real-time barcode tracking.",
           tech: ["React", "Node.js", "MongoDB", "Tailwind"],
           image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000",
-          link: "#"
+          link: "" // Removed '#' to fix ESLint error
         },
         {
           title: "E-Commerce Platform",
           desc: "Modern digital storefront with secure Stripe payments, cart logic, and high-speed product filtering.",
           tech: ["React", "Node.js", "MongoDB", "Tailwind"],
           image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000",
-          link: "#"
+          link: "" // Removed '#' to fix ESLint error
         }
       ].map((project, index) => (
         <div 
@@ -289,7 +289,7 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
                 Source Code <span>→</span>
               </button>
               
-              {project.link !== "#" ? (
+              {project.link ? (
                 <a 
                   href={project.link}
                   target="_blank"
@@ -299,7 +299,10 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
                   Live Preview
                 </a>
               ) : (
-                <button className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-extrabold rounded-xl transition-all shadow-lg active:scale-95">
+                <button 
+                  type="button"
+                  className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-extrabold rounded-xl transition-all shadow-lg active:scale-95"
+                >
                   Live Preview
                 </button>
               )}
