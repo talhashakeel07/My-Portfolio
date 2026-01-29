@@ -261,7 +261,6 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/80 to-transparent opacity-40"></div>
           </div>
 
-          {/* Project Content */}
           <div className="p-8 flex flex-col flex-grow">
             <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
               {project.title}
@@ -271,7 +270,6 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
               {project.desc}
             </p>
 
-            {/* Tech Badges */}
             <div className="flex flex-wrap gap-2 mb-8 mt-auto">
               {project.tech.map((t, i) => (
                 <span 
@@ -283,16 +281,13 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
               ))}
             </div>
 
-            {/* Action Buttons */}
             <div className="flex items-center justify-between pt-6 border-t border-white/5">
-              <button 
-                type="button" 
-                className="text-sm font-bold text-gray-400 hover:text-white transition-all flex items-center gap-1 group-hover:gap-2"
-              >
+              {/* Source Code: Changed from button to span to be extra safe */}
+              <span className="text-sm font-bold text-gray-400 hover:text-white cursor-pointer transition-all flex items-center gap-1 group-hover:gap-2">
                 Source Code <span>→</span>
-              </button>
+              </span>
               
-              {project.link && project.link.trim() !== "" ? (
+              {project.link && project.link.length > 5 ? (
                 <a 
                   href={project.link}
                   target="_blank"
